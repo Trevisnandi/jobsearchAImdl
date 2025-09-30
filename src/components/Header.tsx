@@ -1,24 +1,36 @@
 import React, { useState } from 'react';
-import { Search, Bell, User, Menu, X, Briefcase, BookOpen, TrendingUp } from 'lucide-react';
+import { Search, Bell, User, Menu, X, Briefcase, BookOpen, TrendingUp, Heart, FileText, Upload, Building, Trophy } from 'lucide-react';
 
 interface HeaderProps {
   currentView: string;
   onViewChange: (view: string) => void;
   isLoggedIn: boolean;
+  userType?: 'jobseeker' | 'employer';
   onAuthToggle: () => void;
   onBackToLanding?: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ currentView, onViewChange, isLoggedIn, onAuthToggle, onBackToLanding }) => {
+const Header: React.FC<HeaderProps> = ({ currentView, onViewChange, isLoggedIn, userType = 'jobseeker', onAuthToggle, onBackToLanding }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
-  const navigation = [
-    { id: 'dashboard', label: 'Dashboard', icon: TrendingUp },
-    { id: 'jobs', label: 'Find Jobs', icon: Briefcase },
+  const jobseekerNavigation = [
+    { id: 'swipe', label: 'Discover', icon: Heart },
+    { id: 'applications', label: 'Applications', icon: FileText },
+    { id: 'cv-upload', label: 'CV Upload', icon: Upload },
     { id: 'learning', label: 'Learning', icon: BookOpen },
+    { id: 'progress', label: 'Progress', icon: Trophy },
     { id: 'profile', label: 'Profile', icon: User },
   ];
+
+  const employerNavigation = [
+    { id: 'employer-dashboard', label: 'Dashboard', icon: TrendingUp },
+    { id: 'post-job', label: 'Post Job', icon: Briefcase },
+    { id: 'candidates', label: 'Candidates', icon: User },
+    { id: 'analytics', label: 'Analytics', icon: TrendingUp },
+  ];
+
+  const navigation = userType === 'jobseeker' ? jobseekerNavigation : employerNavigation;
 
   return (
     <header className="bg-white shadow-lg border-b border-gray-200 sticky top-0 z-50">
@@ -35,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({ currentView, onViewChange, isLoggedIn, 
                   <Briefcase className="w-5 h-5 text-white" />
                 </div>
                 <h1 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  TalentConnect AI
+                  SparkApply
                 </h1>
               </button>
             </div>
@@ -52,7 +64,7 @@ const Header: React.FC<HeaderProps> = ({ currentView, onViewChange, isLoggedIn, 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-150 ease-in-out"
-                placeholder="Search jobs, skills, companies..."
+                placeholder={userType === 'jobseeker' ? "Search jobs, skills, companies..." : "Search candidates, skills..."}
               />
             </div>
           </div>
@@ -88,6 +100,7 @@ const Header: React.FC<HeaderProps> = ({ currentView, onViewChange, isLoggedIn, 
               <div className="flex items-center space-x-2 text-sm bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">
                 <span>👁️</span>
                 <span>Preview Mode</span>
+                <span>({userType === 'jobseeker' ? 'Job Seeker' : 'Employer'})</span>
               </div>
             )}
             <button

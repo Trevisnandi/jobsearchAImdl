@@ -3,16 +3,17 @@ import { Mail, Lock, User, Eye, EyeOff, Briefcase } from 'lucide-react';
 
 interface AuthFormProps {
   onAuthSuccess: () => void;
+  onUserTypeChange?: (userType: 'jobseeker' | 'employer') => void;
 }
 
-const AuthForm: React.FC<AuthFormProps> = ({ onAuthSuccess }) => {
+const AuthForm: React.FC<AuthFormProps> = ({ onAuthSuccess, onUserTypeChange }) => {
   const [isLogin, setIsLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
     password: '',
-    userType: 'jobseeker',
+    userType: 'jobseeker' as 'jobseeker' | 'employer',
   });
   const [loading, setLoading] = useState(false);
 
@@ -28,10 +29,15 @@ const AuthForm: React.FC<AuthFormProps> = ({ onAuthSuccess }) => {
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
+    
+    if (name === 'userType' && onUserTypeChange) {
+      onUserTypeChange(value as 'jobseeker' | 'employer');
+    }
   };
 
   return (
@@ -44,7 +50,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ onAuthSuccess }) => {
               <Briefcase className="w-7 h-7 text-white" />
             </div>
             <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              TalentConnect AI
+              SparkApply
             </h1>
           </div>
           <h2 className="text-3xl font-bold text-gray-900 mb-2">
@@ -225,25 +231,25 @@ const AuthForm: React.FC<AuthFormProps> = ({ onAuthSuccess }) => {
         {/* Features */}
         {!isLogin && (
           <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Why join TalentConnect AI?</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Why join SparkApply?</h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
                   <span className="text-blue-600 text-sm">🤖</span>
                 </div>
-                <span className="text-sm text-gray-700">AI-powered job matching based on your skills</span>
+                <span className="text-sm text-gray-700">Swipe-to-apply with AI-powered job matching</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
                   <span className="text-green-600 text-sm">📈</span>
                 </div>
-                <span className="text-sm text-gray-700">Career planning and skill development tools</span>
+                <span className="text-sm text-gray-700">AI-tailored CVs and cover letters for each application</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
                   <span className="text-purple-600 text-sm">🌍</span>
                 </div>
-                <span className="text-sm text-gray-700">Access to global opportunities and remote work</span>
+                <span className="text-sm text-gray-700">Kanban-style application tracking and progress gamification</span>
               </div>
             </div>
           </div>
