@@ -29,26 +29,26 @@ const LandingPage: React.FC<LandingPageProps> = ({ onLogin, onPreview }) => {
   const features = [
     {
       icon: Brain,
-      title: 'AI-Powered Job Matching',
-      description: 'Our advanced AI analyzes your CV and matches you with the perfect opportunities based on your skills, experience, and career goals.',
+      title: 'Swipe-to-Apply Interface',
+      description: 'Discover jobs with an intuitive swipe interface. Swipe right to apply, left to pass. Our AI learns your preferences to show better matches over time.',
       color: 'from-blue-500 to-cyan-500',
     },
     {
       icon: Target,
-      title: 'Career Planning Tools',
-      description: 'Get personalized career roadmaps, skill gap analysis, and actionable insights to accelerate your professional growth.',
+      title: 'AI-Tailored Applications',
+      description: 'Every swipe right generates a customized CV and cover letter using AI. Preview, edit, and approve before submission for maximum impact.',
       color: 'from-purple-500 to-pink-500',
     },
     {
       icon: Globe,
-      title: 'Global Opportunities',
-      description: 'Access remote and on-site positions from companies worldwide. Connect with international employers and expand your horizons.',
+      title: 'Kanban Application Tracking',
+      description: 'Track your applications through every stage: Draft → Sent → Interview → Offer. Never lose track of your job search progress again.',
       color: 'from-green-500 to-emerald-500',
     },
     {
       icon: BookOpen,
-      title: 'Learning & Development',
-      description: 'Upskill with curated courses, certifications, and learning paths tailored to your career objectives and industry trends.',
+      title: 'Smart Learning Integration',
+      description: 'Get personalized course recommendations when your profile has skill gaps. Partner institutions help bridge the learning-to-employment gap.',
       color: 'from-orange-500 to-red-500',
     },
   ];
@@ -66,7 +66,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onLogin, onPreview }) => {
       role: 'Software Engineer',
       company: 'TechCorp',
       image: '👩‍💻',
-      quote: 'TalentConnect AI helped me find my dream job in just 2 weeks. The AI matching was incredibly accurate!',
+      quote: 'SparkApply made job hunting fun! I swiped my way to 3 interviews in one week. The AI-tailored CVs were spot on.',
       rating: 5,
     },
     {
@@ -74,7 +74,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onLogin, onPreview }) => {
       role: 'Product Manager',
       company: 'StartupXYZ',
       image: '👨‍💼',
-      quote: 'The career planning tools gave me clear direction. I got promoted within 6 months of using the platform.',
+      quote: 'The Kanban board helped me stay organized during my job search. Landed my dream PM role in 3 weeks!',
       rating: 5,
     },
     {
@@ -82,7 +82,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onLogin, onPreview }) => {
       role: 'UX Designer',
       company: 'Design Studio',
       image: '👩‍🎨',
-      quote: 'Amazing platform! Found multiple remote opportunities and improved my skills through their learning center.',
+      quote: 'Love the gamification! Earning points and badges kept me motivated. The AI matching is incredibly smart.',
       rating: 5,
     },
   ];
@@ -98,7 +98,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onLogin, onPreview }) => {
                 <Briefcase className="w-5 h-5 text-white" />
               </div>
               <h1 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                TalentConnect AI
+                SparkApply
               </h1>
             </div>
             <div className="flex items-center space-x-4">
@@ -130,12 +130,11 @@ const LandingPage: React.FC<LandingPageProps> = ({ onLogin, onPreview }) => {
                 <span>AI-Powered Career Platform</span>
               </div>
               <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Unlock Your
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Career </span>
-                Potential
+                Swipe Your Way to
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Dream Jobs</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Connect with global opportunities, enhance your skills, and accelerate your career growth with our AI-powered platform. Join thousands of professionals who've transformed their careers.
+                Discover jobs like never before with our Tinder-style interface. Swipe right to apply with AI-tailored CVs, track applications on a Kanban board, and let machine learning find your perfect match.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
@@ -161,7 +160,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onLogin, onPreview }) => {
                     <CheckCircle className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900">Job Match Found!</h3>
+                    <h3 className="font-bold text-gray-900">Perfect Match!</h3>
                     <p className="text-sm text-gray-600">95% compatibility</p>
                   </div>
                 </div>
@@ -213,10 +212,10 @@ const LandingPage: React.FC<LandingPageProps> = ({ onLogin, onPreview }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Powerful Features for Your Success
+              Revolutionary Job Application Experience
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our comprehensive platform combines cutting-edge AI technology with intuitive design to deliver exceptional career growth experiences.
+              SparkApply transforms the traditional job search with modern technology, making applications faster, smarter, and more engaging than ever before.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -258,9 +257,9 @@ const LandingPage: React.FC<LandingPageProps> = ({ onLogin, onPreview }) => {
                   <div className="text-blue-400">✓ React: Expert Level (95%)</div>
                   <div className="text-blue-400">✓ TypeScript: Advanced (90%)</div>
                   <div className="text-blue-400">✓ Node.js: Intermediate (75%)</div>
-                  <div className="text-yellow-400">⚡ Matching jobs...</div>
+                  <div className="text-yellow-400">⚡ Generating tailored CV...</div>
                   <div className="text-green-400">✅ Found 47 perfect matches</div>
-                  <div className="text-purple-400">🎯 Career score: 92/100</div>
+                  <div className="text-purple-400">🎯 Application ready for review</div>
                 </div>
               </div>
             </div>
@@ -276,7 +275,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onLogin, onPreview }) => {
               Trusted by Professionals Worldwide
             </h2>
             <p className="text-xl text-gray-600">
-              See how TalentConnect AI has transformed careers across the globe
+              See how SparkApply has revolutionized job searching across the globe
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -305,10 +304,10 @@ const LandingPage: React.FC<LandingPageProps> = ({ onLogin, onPreview }) => {
       <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-white mb-6">
-            Ready to Transform Your Career?
+            Ready to Revolutionize Your Job Search?
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Join thousands of professionals who've accelerated their careers with TalentConnect AI. Start your journey today.
+            Join thousands who've discovered their dream jobs through SparkApply. Swipe, match, and get hired faster than ever.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
@@ -338,10 +337,10 @@ const LandingPage: React.FC<LandingPageProps> = ({ onLogin, onPreview }) => {
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
                   <Briefcase className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-xl font-bold">TalentConnect AI</h3>
+                <h3 className="text-xl font-bold">SparkApply</h3>
               </div>
               <p className="text-gray-400">
-                Connecting talent with opportunities worldwide through the power of AI.
+                Revolutionizing job applications with AI-powered matching and swipe-to-apply technology.
               </p>
             </div>
             <div>
@@ -373,7 +372,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onLogin, onPreview }) => {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 TalentConnect AI. All rights reserved.</p>
+            <p>&copy; 2025 SparkApply. All rights reserved.</p>
           </div>
         </div>
       </footer>
